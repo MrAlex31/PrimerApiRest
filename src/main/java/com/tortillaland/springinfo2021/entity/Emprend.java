@@ -1,25 +1,42 @@
 package com.tortillaland.springinfo2021.entity;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
 @Entity
 @Table(name="emprend")
 public class Emprend {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    
+    @NotEmpty(message = "El nombre no puede ser vacio")
     private String name;
+
     private String description;
-    private String content;
-    private LocalDate dateCreation;
-    private Long collection;
-    private Boolean published;
-    private Long url;
-    private String tags;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User owner;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "empred_id",
+            joinColumns = @JoinColumn(name = "emprend_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private List<Tag> tags = new ArrayList<>();
 
     public Long getId() {
         return this.id;
@@ -45,56 +62,26 @@ public class Emprend {
         this.description = description;
     }
 
-    public String getContent() {
-        return this.content;
+    public User getOwner() {
+        return this.owner;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
-    public LocalDate getDateCreation() {
-        return this.dateCreation;
+    public void agregarTag(Tag tag) {
+        tags.add(tag);
+        tag.getEmprends().add(this);
     }
 
-    public void setDateCreation(LocalDate dateCreation) {
-        this.dateCreation = dateCreation;
+    public void removerTag(Tag tag) {
+        tags.remove(tag);
+        tag.getEmprends().remove(null);
     }
 
-    public Long getCollection() {
-        return this.collection;
-    }
-
-    public void setCollection(Long collection) {
-        this.collection = collection;
-    }
-
-    public Boolean isPublished() {
-        return this.published;
-    }
-
-    public Boolean getPublished() {
-        return this.published;
-    }
-
-    public void setPublished(Boolean published) {
-        this.published = published;
-    }
-
-    public Long getUrl() {
-        return this.url;
-    }
-
-    public void setUrl(Long url) {
-        this.url = url;
-    }
-
-    public String getTags() {
-        return this.tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
+    public List<Tag> getTags() {
+        return tags;
     }
 
 }
