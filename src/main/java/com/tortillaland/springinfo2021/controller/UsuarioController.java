@@ -30,7 +30,7 @@ public class UsuarioController {
     public ResponseEntity<?>crearUsuario(@Valid @RequestBody Usuario usuario) {
         return new ResponseEntity<>(usuarioService.guardar(usuario), HttpStatus.CREATED);
     }
-    @PutMapping(value = "/{id}/quitar")
+    @PutMapping(value = "/eliminar/{id}")
     public Usuario eliminarUsuario(@PathVariable("id") Long id, Usuario usuario) {
         return this.usuarioService.eliminar(id, usuario);
     }
