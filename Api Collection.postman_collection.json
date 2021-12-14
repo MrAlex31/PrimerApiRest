@@ -506,34 +506,99 @@
 			"name": "evento",
 			"item": [
 				{
-					"name": "crear evento",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Emprendimientos revolucionarios\",\r\n    \"detalles\": \"Este evento busca encontrar emprendedores con proyectos revolucionarios\",\r\n    \"fechaDeInicio\": \"2021/12/20\",\r\n    \"fechaFinal\": \"2021/12/30\",\r\n    \"premio\": 10000000\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "Posts",
+					"item": [
+						{
+							"name": "crear evento 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Emprendimiento X\",\r\n    \"detalles\": \"Este evento busca encontrar emprendedores con proyectos revolucionarios\",\r\n    \"fechaDeInicio\": \"2021/12/28\",\r\n    \"fechaFinal\": \"2021/12/30\",\r\n    \"premio\": 1000000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/eventos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"eventos"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:8080/api/v1/eventos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"v1",
-								"eventos"
-							]
+						{
+							"name": "crear evento 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Emprendimientos revolucionarios\",\r\n    \"detalles\": \"Este evento busca encontrar emprendedores con proyectos revolucionarios\",\r\n    \"fechaDeInicio\": \"2021/12/14\",\r\n    \"fechaFinal\": \"2021/12/18\",\r\n    \"premio\": 10000000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/eventos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"eventos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "crear evento 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Emprendimientos revolucionarios\",\r\n    \"detalles\": \"Este evento busca encontrar emprendedores con proyectos revolucionarios\",\r\n    \"fechaDeInicio\": \"2021/12/01\",\r\n    \"fechaFinal\": \"2021/12/03\",\r\n    \"premio\": 10000000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/eventos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"eventos"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "eliminar evento",
@@ -565,7 +630,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Emprendimientos revolucionarios\",\r\n    \"detalles\": \"Este evento busca encontrar emprendedores con proyectos revolucionarios\",\r\n    \"fechaDeInicio\": \"2021/12/20\",\r\n    \"fechaFinal\": \"2021/12/30\",\r\n    \"premio\": 2000000\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
