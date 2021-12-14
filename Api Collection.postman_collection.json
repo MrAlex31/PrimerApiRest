@@ -563,6 +563,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Emprendimientos revolucionarios\",\r\n    \"detalles\": \"Este evento busca encontrar emprendedores con proyectos revolucionarios\",\r\n    \"fechaDeInicio\": \"2021/12/20\",\r\n    \"fechaFinal\": \"2021/12/30\",\r\n    \"premio\": 2000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/eventos/actualizar-estado",
 							"protocol": "http",
