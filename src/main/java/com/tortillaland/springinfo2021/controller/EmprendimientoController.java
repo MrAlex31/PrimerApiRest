@@ -40,7 +40,7 @@ public class EmprendimientoController {
                                                  @Valid @RequestBody Emprendimieto emprendimiento) {
         return new ResponseEntity<>(emprendimientoService.guardar(usuarioId, emprendimiento), HttpStatus.CREATED);                                          
     }
-    @PutMapping(value = "/api/v1/emprendimientos/{id}/quitar")
+    @PutMapping(value = "/api/v1/emprendimientos/eliminar/{id}")
     public Emprendimieto eliminarEmprendimiento(@PathVariable("id") Long id, Emprendimieto emprendimiento) {
         return this.emprendimientoService.eliminar(id, emprendimiento);
     }

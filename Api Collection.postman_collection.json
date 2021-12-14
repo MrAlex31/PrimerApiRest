@@ -118,7 +118,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/usuarios/1/quitar",
+							"raw": "http://localhost:8080/api/v1/usuarios/eliminar/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -128,8 +128,8 @@
 								"api",
 								"v1",
 								"usuarios",
-								"1",
-								"quitar"
+								"eliminar",
+								"1"
 							]
 						}
 					},
@@ -454,7 +454,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/emprendimientos/1/quitar",
+							"raw": "http://localhost:8080/api/v1/emprendimientos/eliminar/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -464,8 +464,8 @@
 								"api",
 								"v1",
 								"emprendimientos",
-								"1",
-								"quitar"
+								"eliminar",
+								"1"
 							]
 						}
 					},
@@ -606,7 +606,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/eventos/1/eliminar",
+							"raw": "http://localhost:8080/api/v1/eventos/eliminar/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -616,8 +616,8 @@
 								"api",
 								"v1",
 								"eventos",
-								"1",
-								"eliminar"
+								"eliminar",
+								"1"
 							]
 						}
 					},

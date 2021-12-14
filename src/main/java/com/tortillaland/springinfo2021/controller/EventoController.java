@@ -27,7 +27,7 @@ public class EventoController {
     public ResponseEntity<?> crearEvento(@Valid @RequestBody Evento evento) {
         return new ResponseEntity<>(eventoService.guardar(evento), HttpStatus.CREATED);
     }
-    @PutMapping(value = "/{id}/eliminar")
+    @PutMapping(value = "/eliminar/{id}")
     public Evento eliminarEvento(@PathVariable("id") Long id, Evento evento) {
         return this.eventoService.eliminar(id, evento);
     }
